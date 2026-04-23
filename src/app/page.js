@@ -1,29 +1,29 @@
 export default function Home() {
   const libros = [
-    { id: 1, titulo: "Pedro Páramo", autor: "Juan Rulfo", genero: "Literatura Mexicana", anio: "1955", cond: "Muy bueno", encuad: "Rústica", primeraEd: true, camisa: "No aplica", precio: 3200, vendedor: "Librería El Péndulo", color: "#2C1A0E" },
+    { id: 1, titulo: "Pedro Páramo", autor: "Juan Rulfo", genero: "Literatura Mexicana", anio: "1955", cond: "Muy bueno", encuad: "Rústica", primeraEd: true, camisa: "No aplica", precio: 3200, vendedor: "Librería El Murciélago", color: "#2C1A0E" },
     { id: 2, titulo: "El laberinto de la soledad", autor: "Octavio Paz", genero: "Ensayo", anio: "1950", cond: "Bueno", encuad: "Rústica", primeraEd: true, camisa: "No aplica", precio: 1850, vendedor: "Casa del Libro Antiguo", color: "#1A2C1A" },
     { id: 3, titulo: "Muerte sin fin", autor: "José Gorostiza", genero: "Poesía", anio: "1939", cond: "Excelente", encuad: "Tapa dura", primeraEd: true, camisa: "Muy buena", precio: 4500, vendedor: "Bibliofilia MX", color: "#2C2210" },
-    { id: 4, titulo: "Al filo del agua", autor: "Agustín Yáñez", genero: "Literatura Mexicana", anio: "1947", cond: "Como nuevo", encuad: "Tapa dura", primeraEd: false, camisa: "Buena", precio: 2100, vendedor: "Librería El Péndulo", color: "#1C1C2C" },
+    { id: 4, titulo: "Al filo del agua", autor: "Agustín Yáñez", genero: "Literatura Mexicana", anio: "1947", cond: "Como nuevo", encuad: "Tapa dura", primeraEd: false, camisa: "Buena", precio: 2100, vendedor: "Librería El Murciélago", color: "#1C1C2C" },
     { id: 5, titulo: "Recuerdos del porvenir", autor: "Elena Garro", genero: "Literatura Mexicana", anio: "1963", cond: "Aceptable", encuad: "Rústica", primeraEd: true, camisa: "No aplica", precio: 1600, vendedor: "La Abeja Lectora", color: "#2C1818" },
     { id: 6, titulo: "Los de abajo", autor: "Mariano Azuela", genero: "Historia", anio: "1915", cond: "Bueno", encuad: "Tapa dura", primeraEd: false, camisa: "Aceptable", precio: 5800, vendedor: "Bibliofilia MX", color: "#182018" },
   ];
 
   const vendedores = [
-    { nombre: "Librería El Péndulo", ciudad: "Ciudad de México", rating: 4.9, ventas: 342, años: 12, desc: "Especialistas en literatura mexicana del siglo XX.", inicial: "P" },
+    { nombre: "Librería el Murciélago", ciudad: "Ciudad de México", rating: 4.9, ventas: 342, años: 12, desc: "Especialistas en literatura mexicana del siglo XX.", inicial: "P" },
     { nombre: "Bibliofilia MX", ciudad: "Guadalajara, Jal.", rating: 4.8, ventas: 218, años: 8, desc: "Coleccionistas de primeras ediciones y libros agotados.", inicial: "B" },
     { nombre: "La Abeja Lectora", ciudad: "Monterrey, N.L.", rating: 4.7, ventas: 156, años: 5, desc: "Librería de viejo con énfasis en poesía y teatro.", inicial: "A" },
     { nombre: "Casa del Libro Antiguo", ciudad: "Oaxaca, Oax.", rating: 5.0, ventas: 89, años: 15, desc: "Especialistas en historia regional y etnografía mexicana.", inicial: "C" },
   ];
 
   const categorias = [
-    { icon: "📜", nombre: "Literatura Mexicana", count: "2,340" },
+    { icon: "📜", nombre: "Narrativa", count: "2,340" },
     { icon: "🏛️", nombre: "Historia", count: "1,820" },
     { icon: "✒️", nombre: "Poesía", count: "940" },
     { icon: "🎨", nombre: "Arte", count: "610" },
     { icon: "🔭", nombre: "Ciencia", count: "780" },
     { icon: "🧠", nombre: "Filosofía", count: "530" },
     { icon: "📖", nombre: "Primeras ediciones", count: "420" },
-    { icon: "🗺️", nombre: "Geografía", count: "310" },
+    { icon: "🗺️", nombre: "Ciencias sociales", count: "310" },
     { icon: "🎭", nombre: "Teatro", count: "280" },
     { icon: "📰", nombre: "Periodismo", count: "195" },
   ];
@@ -37,7 +37,7 @@ export default function Home() {
           El <span style={{ color: "#B8502E", fontStyle: "italic" }}>Volador</span>
         </a>
         <ul style={{ display: "flex", gap: "2rem", listStyle: "none", margin: 0, padding: 0 }}>
-          {["Catálogo", "Libreros", "Busco un libro", "Géneros"].map(item => (
+          {["Catálogo", "Librerías", "Busco un libro", "Secciones"].map(item => (
             <li key={item}><a href="#" style={{ textDecoration: "none", color: "#7A6F5E", fontSize: ".75rem", letterSpacing: ".1em", textTransform: "uppercase" }}>{item}</a></li>
           ))}
         </ul>
@@ -64,7 +64,7 @@ export default function Home() {
             <button style={{ background: "none", color: "#1C1409", border: "1px solid rgba(28,20,9,.15)", borderRadius: "2px", padding: ".85rem 2.2rem", fontSize: ".78rem", cursor: "pointer", letterSpacing: ".1em", textTransform: "uppercase" }}>Busco un libro</button>
           </div>
           <div style={{ display: "flex", gap: "3rem", marginTop: "3.5rem", paddingTop: "2.5rem", borderTop: "1px solid rgba(28,20,9,.15)" }}>
-            {[["12,400+", "Libros disponibles"], ["340", "Libreros activos"], ["32", "Estados de México"]].map(([num, label]) => (
+            {[["12,400+", "Libros disponibles"], ["340", "Librerías activas"], ["32", "Estados de México"]].map(([num, label]) => (
               <div key={label}>
                 <span style={{ fontFamily: "Georgia, serif", fontSize: "2rem", fontWeight: 600, display: "block" }}>{num}</span>
                 <span style={{ fontSize: ".7rem", letterSpacing: ".1em", textTransform: "uppercase", color: "#7A6F5E" }}>{label}</span>
@@ -154,7 +154,7 @@ export default function Home() {
       <section style={{ padding: "5rem" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "3rem" }}>
           <div>
-            <div style={{ fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "#B8502E", marginBottom: ".5rem" }}>Libreros</div>
+            <div style={{ fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "#B8502E", marginBottom: ".5rem" }}>Librerías</div>
             <h2 style={{ fontFamily: "Georgia, serif", fontSize: "2.4rem", fontWeight: 300 }}>Vendedores <em>destacados</em></h2>
           </div>
           <a href="#" style={{ fontSize: ".72rem", letterSpacing: ".1em", textTransform: "uppercase", color: "#7A6F5E", textDecoration: "none", borderBottom: "1px solid #7A6F5E" }}>Ver todos</a>

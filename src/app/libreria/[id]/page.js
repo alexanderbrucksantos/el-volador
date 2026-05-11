@@ -129,12 +129,12 @@ export default function PerfilLibreria() {
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Jost', sans-serif; }
         @keyframes pluma {
-          0%   { transform: translateX(0px)   rotate(0deg);  }
-          20%  { transform: translateX(-2px)  rotate(-7deg); }
-          50%  { transform: translateX(-5px)  rotate(4deg);  }
-          75%  { transform: translateX(-9px)  rotate(0deg);  }
-          80%  { transform: translateX(-9px)  rotate(-5deg); }
-          100% { transform: translateX(-9px)  rotate(0deg);  }
+          0%   { transform: translateX(-6px)  rotate(0deg);  }
+          20%  { transform: translateX(-4px)  rotate(7deg);  }
+          50%  { transform: translateX(-2px)  rotate(-4deg); }
+          75%  { transform: translateX(0px)   rotate(0deg);  }
+          80%  { transform: translateX(0px)   rotate(5deg);  }
+          100% { transform: translateX(0px)   rotate(0deg);  }
         }
         @keyframes trazar {
           0%   { stroke-dashoffset: 18; }

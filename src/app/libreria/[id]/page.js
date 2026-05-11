@@ -128,6 +128,12 @@ export default function PerfilLibreria() {
         @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Jost', sans-serif; }
+        @keyframes escribir {
+          0%, 100% { transform: rotate(0deg) translate(0, 0); }
+          20%       { transform: rotate(-7deg) translate(-1px, 1px); }
+          50%       { transform: rotate(4deg) translate(1px, -1px); }
+          80%       { transform: rotate(-5deg) translate(-1px, 1px); }
+        }
       `}</style>
 
       <nav
@@ -374,8 +380,29 @@ export default function PerfilLibreria() {
                 cursor: "pointer",
                 letterSpacing: ".1em",
                 textTransform: "uppercase",
+                display: "flex",
+                alignItems: "center",
+                gap: ".5rem",
               }}
             >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{
+                  animation: "escribir 1.5s ease-in-out infinite",
+                  transformOrigin: "18% 82%",
+                  flexShrink: 0,
+                }}
+              >
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                <path d="M15 5l4 4" />
+              </svg>
               Enviar mensaje
             </button>
             <button

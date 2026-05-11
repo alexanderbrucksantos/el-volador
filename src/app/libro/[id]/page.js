@@ -4,13 +4,16 @@ import { notFound } from "next/navigation";
 export default async function FichaLibro({ params }) {
   const { id } = await params;
 
-  const { data, error } = await supabase
-    .from("libros")
-    .select("*, vendedores(*)")
-    .eq("id", id)
-    .single();
+  const [{ data, error }, { data: imagenesData }] = await Promise.all([
+    supabase.from("libros").select("*, vendedores(*)").eq("id", id).single(),
+    supabase.from("imagenes_libro").select("url").eq("libro_id", id).order("orden"),
+  ]);
 
   if (error || !data) notFound();
+
+  const fotos = imagenesData?.length
+    ? imagenesData.map((img) => img.url)
+    : data.fotos ?? [];
 
   const libro = {
     id: data.id,
@@ -29,7 +32,7 @@ export default async function FichaLibro({ params }) {
     numPaginas: data.num_paginas,
     precio: data.precio,
     notas: data.notas,
-    fotos: data.fotos ?? [],
+    fotos,
     vendedor: {
       nombre: data.vendedores?.nombre,
       ciudad: data.vendedores?.ciudad,

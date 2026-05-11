@@ -134,6 +134,11 @@ export default function PerfilLibreria() {
           50%       { transform: rotate(4deg) translate(1px, -1px); }
           80%       { transform: rotate(-5deg) translate(-1px, 1px); }
         }
+        @keyframes trazar {
+          0%   { stroke-dashoffset: 18; }
+          75%  { stroke-dashoffset: 0; }
+          100% { stroke-dashoffset: 0; }
+        }
       `}</style>
 
       <nav
@@ -387,8 +392,8 @@ export default function PerfilLibreria() {
             >
               <svg
                 width="13"
-                height="13"
-                viewBox="0 0 24 24"
+                height="15"
+                viewBox="0 0 24 28"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2.2"
@@ -396,12 +401,21 @@ export default function PerfilLibreria() {
                 strokeLinejoin="round"
                 style={{
                   animation: "escribir 1.5s ease-in-out infinite",
-                  transformOrigin: "18% 82%",
+                  transformOrigin: "18% 71%",
                   flexShrink: 0,
                 }}
               >
                 <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
                 <path d="M15 5l4 4" />
+                <line
+                  x1="0" y1="26" x2="18" y2="26"
+                  strokeWidth="1.5"
+                  style={{
+                    strokeDasharray: 18,
+                    strokeDashoffset: 18,
+                    animation: "trazar 1.5s ease-in-out infinite",
+                  }}
+                />
               </svg>
               Enviar mensaje
             </button>

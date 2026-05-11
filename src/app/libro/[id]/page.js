@@ -363,6 +363,30 @@ export default async function FichaLibro({ params }) {
               >
                 Estado
               </div>
+              <div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap", marginBottom: ".8rem" }}>
+                <span
+                  style={{
+                    fontSize: ".72rem",
+                    border: "1px solid rgba(28,20,9,.15)",
+                    padding: ".3rem .8rem",
+                    color: "#7A6F5E",
+                  }}
+                >
+                  {libro.encuadernacion}
+                </span>
+                {libro.primeraEdicion && (
+                  <span
+                    style={{
+                      fontSize: ".72rem",
+                      border: "1px solid #C49A3C",
+                      padding: ".3rem .8rem",
+                      color: "#C49A3C",
+                    }}
+                  >
+                    Primera edición
+                  </span>
+                )}
+              </div>
               <div
                 style={{
                   display: "flex",
@@ -387,30 +411,6 @@ export default async function FichaLibro({ params }) {
                   {libro.condicion}
                 </span>
               </div>
-              <div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap" }}>
-                <span
-                  style={{
-                    fontSize: ".72rem",
-                    border: "1px solid rgba(28,20,9,.15)",
-                    padding: ".3rem .8rem",
-                    color: "#7A6F5E",
-                  }}
-                >
-                  {libro.encuadernacion}
-                </span>
-                {libro.primeraEdicion && (
-                  <span
-                    style={{
-                      fontSize: ".72rem",
-                      border: "1px solid #C49A3C",
-                      padding: ".3rem .8rem",
-                      color: "#C49A3C",
-                    }}
-                  >
-                    Primera edición
-                  </span>
-                )}
-              </div>
               {libro.camisa !== "No aplica" && (
                 <div
                   style={{
@@ -420,6 +420,9 @@ export default async function FichaLibro({ params }) {
                     marginTop: ".6rem",
                   }}
                 >
+                  <span style={{ fontSize: ".82rem", color: "#7A6F5E" }}>
+                    camisa
+                  </span>
                   <span
                     style={{
                       background: condicionColor[libro.camisa] || "#C49A3C",
@@ -431,9 +434,6 @@ export default async function FichaLibro({ params }) {
                     }}
                   >
                     {libro.camisa}
-                  </span>
-                  <span style={{ fontSize: ".82rem", color: "#7A6F5E" }}>
-                    camisa
                   </span>
                 </div>
               )}

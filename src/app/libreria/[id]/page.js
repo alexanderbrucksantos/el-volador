@@ -390,7 +390,7 @@ export default function PerfilLibreria() {
                 textTransform: "uppercase",
               }}
             >
-              ♡ Seguir librería
+              ♡ Seguir
             </button>
           </div>
         </div>

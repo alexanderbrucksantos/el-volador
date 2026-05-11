@@ -128,11 +128,13 @@ export default function PerfilLibreria() {
         @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Jost', sans-serif; }
-        @keyframes escribir {
-          0%, 100% { transform: rotate(0deg) translate(0, 0); }
-          20%       { transform: rotate(-7deg) translate(-1px, 1px); }
-          50%       { transform: rotate(4deg) translate(1px, -1px); }
-          80%       { transform: rotate(-5deg) translate(-1px, 1px); }
+        @keyframes pluma {
+          0%   { transform: translateX(0px)  rotate(0deg);  }
+          20%  { transform: translateX(2px)  rotate(-7deg); }
+          50%  { transform: translateX(5px)  rotate(4deg);  }
+          75%  { transform: translateX(9px)  rotate(0deg);  }
+          80%  { transform: translateX(9px)  rotate(-5deg); }
+          100% { transform: translateX(9px)  rotate(0deg);  }
         }
         @keyframes trazar {
           0%   { stroke-dashoffset: 18; }
@@ -399,14 +401,18 @@ export default function PerfilLibreria() {
                 strokeWidth="2.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                style={{
-                  animation: "escribir 1.5s ease-in-out infinite",
-                  transformOrigin: "18% 71%",
-                  flexShrink: 0,
-                }}
+                style={{ flexShrink: 0 }}
               >
-                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
-                <path d="M15 5l4 4" />
+                <g
+                  style={{
+                    transformBox: "fill-box",
+                    transformOrigin: "0% 100%",
+                    animation: "pluma 1.5s ease-in-out infinite",
+                  }}
+                >
+                  <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                  <path d="M15 5l4 4" />
+                </g>
                 <line
                   x1="0" y1="26" x2="18" y2="26"
                   strokeWidth="1.5"

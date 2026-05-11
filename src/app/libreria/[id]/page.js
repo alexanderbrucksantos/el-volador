@@ -530,7 +530,7 @@ export default function PerfilLibreria() {
                   fontWeight: 300,
                 }}
               >
-                Ejemplares <em>disponibles</em>
+                Libros <em>disponibles</em>
               </h2>
             </div>
             <a

@@ -352,18 +352,7 @@ export default async function FichaLibro({ params }) {
                 borderBottom: "1px solid rgba(28,20,9,.1)",
               }}
             >
-              <div
-                style={{
-                  fontSize: ".7rem",
-                  letterSpacing: ".12em",
-                  textTransform: "uppercase",
-                  color: "#7A6F5E",
-                  marginBottom: "1rem",
-                }}
-              >
-                Estado
-              </div>
-              <div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap", marginBottom: ".8rem" }}>
+              <div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap", marginBottom: "1rem" }}>
                 <span
                   style={{
                     fontSize: ".72rem",
@@ -386,6 +375,17 @@ export default async function FichaLibro({ params }) {
                     Primera edición
                   </span>
                 )}
+              </div>
+              <div
+                style={{
+                  fontSize: ".7rem",
+                  letterSpacing: ".12em",
+                  textTransform: "uppercase",
+                  color: "#7A6F5E",
+                  marginBottom: "1rem",
+                }}
+              >
+                Estado
               </div>
               <div
                 style={{

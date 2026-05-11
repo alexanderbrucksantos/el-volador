@@ -1,31 +1,43 @@
-export default function FichaLibro() {
+import { supabase } from "@/lib/supabase";
+import { notFound } from "next/navigation";
+
+export default async function FichaLibro({ params }) {
+  const { id } = await params;
+
+  const { data, error } = await supabase
+    .from("libros")
+    .select("*, vendedores(*)")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) notFound();
+
   const libro = {
-    id: 1,
-    titulo: "Pedro Páramo",
-    autor: "Juan Rulfo",
-    editorial: "Fondo de Cultura Económica",
-    anio: 1955,
-    numeroEdicion: "Primera edición",
-    condicion: "Muy bueno",
-    encuadernacion: "Rústica",
-    primeraEdicion: true,
-    camisa: "No aplica",
-    sku: "VOL-1955-00001",
-    isbn: null,
-    idioma: "Español",
-    numPaginas: 124,
-    precio: 3200,
-    notas:
-      "Ejemplar en muy buen estado. Lomo firme, sin subrayados ni anotaciones. Páginas ligeramente amarillentas por el paso del tiempo, lo cual es normal para un ejemplar de esta antigüedad. Portada original en buen estado con desgaste mínimo en las esquinas.",
-    fotos: ["/libro1.jpg", "#3D2510", "#1A0E06"],
+    id: data.id,
+    titulo: data.titulo,
+    autor: data.autor,
+    editorial: data.editorial,
+    anio: data.anio,
+    numeroEdicion: data.numero_edicion,
+    condicion: data.condicion,
+    encuadernacion: data.encuadernacion,
+    primeraEdicion: data.primera_edicion,
+    camisa: data.camisa,
+    sku: data.sku,
+    isbn: data.isbn,
+    idioma: data.idioma,
+    numPaginas: data.num_paginas,
+    precio: data.precio,
+    notas: data.notas,
+    fotos: data.fotos ?? [],
     vendedor: {
-      nombre: "Librería El Murciélago",
-      ciudad: "Ciudad de México",
-      rating: 4.9,
-      ventas: 342,
-      años: 12,
-      inicial: "M",
-      descripcion: "Especialistas en literatura mexicana del siglo XX.",
+      nombre: data.vendedores?.nombre,
+      ciudad: data.vendedores?.ciudad,
+      rating: data.vendedores?.rating,
+      ventas: data.vendedores?.ventas,
+      años: data.vendedores?.años,
+      inicial: data.vendedores?.inicial,
+      descripcion: data.vendedores?.descripcion,
     },
   };
 
